@@ -1,0 +1,9 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: $font-inter;
+}

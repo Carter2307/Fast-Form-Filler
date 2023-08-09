@@ -1,0 +1,8 @@
+.logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    @include space-x(12);
+
+    
+}

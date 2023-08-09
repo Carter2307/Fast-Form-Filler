@@ -1,0 +1,56 @@
+.onboard {
+	height: 100vh;
+    @include flex-center;
+}
+
+.onboard__content {
+    max-width: rem(380);
+    background-color: var(--clr-shade-white);
+    box-shadow: 0 8px 24px rgba($color: $color-success-400, $alpha: .24);
+    border-radius: rem($modalRadius);
+    border: 4px solid rgba($color: $color-success-500, $alpha: .01);
+
+    &__image {
+        @include flex-center;
+        padding: rem(24);
+        img {
+            width: 100%;
+        }
+    }
+    &__body {
+        padding: rem(24);
+        @include space-y(24);
+        text-align: center;
+
+        h3 {
+            @include text-lg; 
+            font-weight: 700;
+        }
+
+        p {
+            @include text-sm;
+            color: var(--clr-gray-600);
+        }
+
+        button {
+            width: 100%;
+        }
+        
+    }
+}
+
+.onboard__background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+    height: 100%;
+    filter: blur(60px);
+    z-index: -1;
+
+    img {
+        position: absolute;
+        top: -180px;
+        left: -120px;
+    }
+}

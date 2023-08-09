@@ -1,0 +1,29 @@
+{
+	"manifest_version": 3,
+	"version": "1.0",
+	"name": "3F (Fast Form Filler)",
+	"description": "Fill long and short form fields easily",
+	"icons": {
+		"16": "app-icons/icons-16.png",
+		"32": "app-icons/icons-32.png",
+		"48": "app-icons/icons-48.png",
+		"128": "app-icons/icons-128.png"
+	},
+	"web_accessible_resources": [
+		{
+			"resources": ["app-icons/*", "onboard.png", "assets/svg/*"],
+			"matches": ["*://*/*"]
+		}
+	],
+	"action": {
+		"default_icon": "app-icons/icons-32.png"
+	},
+	"content_scripts" : [{
+		"matches": ["*://*/*"],
+		"css": ["./styles/popup.css"]
+	}],
+	"background": {
+		"service_worker": "js/build/services-workers.js"
+	},
+	"permissions": ["tabs","activeTab", "scripting"]
+}

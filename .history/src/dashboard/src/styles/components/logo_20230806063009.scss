@@ -1,0 +1,11 @@
+.logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    @include space-x(12);
+
+    &__title {
+        @include text-sm;
+        font-weight: ;
+    }
+}
