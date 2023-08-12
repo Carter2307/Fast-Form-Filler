@@ -1,7 +1,9 @@
 @import 'utils/variables';
 @import '@roger.b/styles';
+@import "common/view";
+
 @import 'base/font';
 @import 'base/root';
 @import 'base/global';
 
-@import "components/"
+@import "components/";

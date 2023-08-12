@@ -1,0 +1,31 @@
+$dotSize: 2;
+$dotOpacity: rgba(
+	$color: $color-gray-100,
+	$alpha: 0.3,
+);
+
+.canvas {
+	height: 100vh;
+	width: 100vw;
+	background-image: linear-gradient($dotOpacity, $dotOpacity), url("../assets/dot-grid.png");
+	background-repeat: no-repeat;
+	background-size: calc(300% / $dotSize);
+}
+
+.canvas__container {
+    @include flex-center;
+    padding-top: rem(64);
+}
+
+.canvas__presets__name {
+    border-radius: rem(999);
+    padding: rem(8) rem(12);
+    background-color: var(--clr-shade-white);
+    @include flex-center;
+    @include space-x(8);
+    max-width: fit-content;
+    box-shadow: 0px 1px 5px rgba(
+        $color: #0000,
+        $alpha: 0.25,
+    );
+}

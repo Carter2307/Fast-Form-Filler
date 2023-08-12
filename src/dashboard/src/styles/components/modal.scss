@@ -1,0 +1,44 @@
+.modal {
+	@include flex-center;
+	height: 100%;
+	width: 100%;
+	background-color: rgba($color: #e5e7eb, $alpha: 0.4);
+	backdrop-filter: blur(8px);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+[modal-open="true"] {
+	display: flex;
+}
+
+.modal__container {
+	@extend %view;
+}
+
+.modal__header {
+	@include flex-between;
+	@extend %view__header;
+
+	&__button {
+		background: none;
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
+
+	&__title {
+		@include space-x(8);
+		@include flex-center;
+	}
+}
+
+.modal__body {
+	@extend %view__body;
+}
+
+.modal__footer {
+	@extend %view__footer;
+}

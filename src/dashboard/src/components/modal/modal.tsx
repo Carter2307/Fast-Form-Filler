@@ -1,42 +1,49 @@
-import { Logo } from "../_basics";
+import { UilTimes } from "@iconscout/react-unicons";
+import { UilBrowser } from "@iconscout/react-unicons";
+import { Button } from "../_basics";
 
-export function Modal(props: {
-	mode: "list" | "modal";
-	iconType: "list" | "modal" | "logo";
-	children: React.ReactNode;
-	open: boolean;
-	createCallback?: CallableFunction;
-	cancelCallback?: CallableFunction;
-	okCallback?: CallableFunction;
-}) {
-	if (props.mode === "modal") {
-        return <div className="modal" modal-mode={props.mode} modal-state={props.open}>
-            <div className="modal__container"></div>
-        </div>;
-	}
-
-	return <div className="modal" modal-mode={props.mode} modal-state={props.open}></div>;
+export function Modal(props: { title: string; children: React.ReactNode; open: boolean; callback: CallableFunction }) {
+	return (
+		<div className="modal" modal-open={props.open ? "true": "false"}>
+			<div className="modal__container">
+				<ModalHeader title={props.title}></ModalHeader>
+				<ModalBody childs={props.children}></ModalBody>
+				<ModalFooter callback={props.callback}></ModalFooter>
+			</div>
+		</div>
+	);
 }
 
+function ModalHeader(props: { title: string }) {
+	return (
+		<div className="modal__header">
+			<div className="modal__header__title">
+				<UilBrowser size="24" color="#4B5563"></UilBrowser>
+				<h4>{props.title}</h4>
+			</div>
+			<button type="button" className="modal__header__button">
+				<UilTimes size="24" color="#D1D5DB"></UilTimes>
+			</button>
+		</div>
+	);
+}
 
+function ModalBody(props: { childs: React.ReactNode }) {
+    return <div className="modal__body">
+        {props.childs}
+    </div>
+}
 
-function modalHeader({iconType}) {
+function ModalFooter(props: { callback: CallableFunction }) {
 
-    if(iconType === "modal") {}
-    else if (iconType === "list") { }
-    
+    function onCreateClick() {
+        props.callback()
+    }
+
     return (
-        <div className="modal__header">
-            <Logo></Logo>
-        </div>
-    )
-}
-
-function modalBody() {
-    
-}
-
-
-function modalFooter() {
-    
+			<div className="modal__footer">
+				<Button type="button" label="Create" style="primary" onClick={onCreateClick} />
+				<Button type="button" label="Cancel" style="secondary" />
+			</div>
+		);
 }

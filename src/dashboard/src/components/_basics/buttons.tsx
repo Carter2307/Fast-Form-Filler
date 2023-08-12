@@ -12,15 +12,15 @@ export function Button(props: {
 	if (props.icon) {
 		return (
 			<button type={props.type} onClick={props.onClick} className={className}>
+				<span className="button__text">{props.label}</span>
 				<i className={props.icon}></i>
-				{props.label}
 			</button>
 		);
 	}
 
 	return (
 		<button type={props.type} className={className} onClick={props.onClick}>
-			{props.label}
+			<span className="button__text">{props.label}</span>
 		</button>
 	);
 }
