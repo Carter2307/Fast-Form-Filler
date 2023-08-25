@@ -25,5 +25,5 @@
 	"background": {
 		"service_worker": "js/build/services-workers.js"
 	},
-	"permissions": ["tabs","activeTab", "scripting"]
+	"permissions": ["tabs","activeTab", "scripting", "storage"]
 }

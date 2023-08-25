@@ -1,11 +1,7 @@
 import { UilBooks } from "@iconscout/react-unicons";
 
-type presetsType = "standard" | "multiple";
+export default function Tree(props: { title: string; presets: presetType[], onclick: CallableFunction }) {
 
-export default function Tree(props: {
-	title: string;
-	presets: { title: string; type: presetsType; fields : any }[];
-}) {
 	const items = props.presets.map((p, index) => {
 		let badge = null;
 
@@ -14,7 +10,7 @@ export default function Tree(props: {
 		}
 
 		return (
-			<li className="fff__tree__group__list__item" key={index}>
+			<li className="fff__tree__group__list__item" key={index} onClick={() => props.onclick(index)}>
 				<h4>{p.title}</h4>
 				{badge}
 			</li>

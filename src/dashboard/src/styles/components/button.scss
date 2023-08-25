@@ -12,13 +12,21 @@
 	&__text {
 		font-weight: 600;
 		@include text-xs;
-		color: var(--clr-shade-white);
+		//color: var(--clr-shade-white);
 	}
 
 	i {
 		margin-left: rem(10);
 		@include text-lg;
 	}
+}
+
+.button-gray {
+	padding: rem(10) rem(24);
+	border-radius: rem($primaryButtonRadius);
+	border: 1px solid var(--clr-gray-color-100);
+	color: var(--clr-gray-800);
+	background-color: var(--clr-gray-100);
 }
 
 .button-secondary {
@@ -35,6 +43,13 @@
 	background-color: var(--clr-success-700);
 	border-radius: rem($primaryButtonRadius);
 	border-color: var(--clr-success-200);
+
+	&-light {
+		padding: rem(10) rem(24);
+		border-radius: rem($primaryButtonRadius);
+		background-color: var(--clr-success-100);
+		color: var(--clr-success-800);
+	}
 }
 
 .button-icon {

@@ -1,11 +1,18 @@
 .fff__actions {
-	@extend %view;
-    max-width: rem(240);
 	position: fixed;
 	right: rem(24);
 	top: rem(24);
+	z-index: 99;
+	@include space-y(16);
 
-	&__list {
+	button {
+		width: 100%;
+	}
+	
+	&__menu {
+		@extend %view;
+		max-width: rem(240);
+
 	}
 
 	&__list__item {

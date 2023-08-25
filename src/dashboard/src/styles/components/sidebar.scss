@@ -2,7 +2,8 @@
    @extend %view;
    position: fixed;
    left: rem(24);
-   top: rem(24)
+   top: rem(24);
+   z-index: 99;
 }
 
 .sidebar__header {
